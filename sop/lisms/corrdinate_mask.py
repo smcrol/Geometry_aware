@@ -12,7 +12,7 @@ def estimate_principal_normal_torch(
     pcd: torch.Tensor,
     mask: torch.Tensor,
     eps: float = 1e-6,
-    deg_thres: float = 0.05
+    deg_thres: float = 0.01
 ) -> torch.Tensor:
     if mask.dim() == 1:
         mask = mask.unsqueeze(-1)
@@ -70,7 +70,7 @@ def estimate_xy_principal_direction_torch(
     pcd: torch.Tensor,
     mask: torch.Tensor,
     eps: float = 1e-6,
-    deg_thres: float = 0.05
+    deg_thres: float = 0.01
 ) -> torch.Tensor:
     if mask.dim() == 1:
         mask = mask.unsqueeze(-1)
@@ -122,7 +122,7 @@ def canonicalize_point_cloud(
     pcd: torch.Tensor,
     mask: torch.Tensor,
     eps: float = 1e-6,
-    deg_thres: float = 0.05
+    deg_thres: float = 0.01
 ) -> torch.Tensor:
     if mask.dim() == 2 and mask.shape[0] == 1:
         mask = mask.transpose(0, 1)
